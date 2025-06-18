@@ -1,8 +1,5 @@
 const sortByDescendingFriendCount = (users) => {
-  return users
-    .flatMap((user) => user.friends)
-    .filter((friend, index, array) => array.indexOf(friend) === index)
-    .toSorted((a, b) => a.localeCompare(b));
+  return users.toSorted((a, b) => b.friends.length - a.friends.length);
 };
 
 console.log(
